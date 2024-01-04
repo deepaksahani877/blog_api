@@ -19,24 +19,33 @@ repositories {
 
 dependencies {
 
-
+    // Spring boot starter dependencies
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-security'
     implementation 'org.springframework.boot:spring-boot-starter-validation'
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
-//    Dependencies for jwt authentication
+    // Dependencies for jwt authentication
     implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-impl:0.11.5'
     runtimeOnly 'io.jsonwebtoken:jjwt-jackson:0.11.5'
-    // https://mvnrepository.com/artifact/org.jetbrains/annotations
-    implementation group: 'org.jetbrains', name: 'annotations', version: '24.0.1'
+
+    // Dependency for Lombok annotation
     compileOnly 'org.projectlombok:lombok'
-    developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    runtimeOnly 'com.mysql:mysql-connector-j'
     annotationProcessor 'org.projectlombok:lombok'
+
+    // Devtools dependency: Development-only
+    developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+    // Database Connector Dependency
+    runtimeOnly 'com.mysql:mysql-connector-j'
+
+    // Test Dependencies
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testImplementation 'org.springframework.security:spring-security-test'
+
+    // Annotations from JetBrains for code analysis, used during development.
+    implementation group: 'org.jetbrains', name: 'annotations', version: '24.0.1'
 }
 
 tasks.named('test') {

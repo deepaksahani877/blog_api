@@ -89,14 +89,13 @@ public class AuthController {
                     .issueDate(LocalDateTime.now())
                     .build();
 
-            jwtProvider.invalidateUser(user.getId());//Invalidate previous tokens
-            jwtTokenService.createOrUpdateToken(jwt);//Create new tokens
+            jwtProvider.invalidateUser(user.getId()); // Invalidate previous tokens
+            jwtTokenService.createOrUpdateToken(jwt); // Create new tokens
             return ResponseEntity.ok().body(response);
         } catch (Exception e) {
             throw new InvalidUsernameOrPasswordException();
         }
     }
-
 }
 
 
